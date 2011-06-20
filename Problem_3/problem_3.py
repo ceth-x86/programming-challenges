@@ -1,4 +1,4 @@
-def problem_5(num):
+def problem_3(num):
     f = 2
 
     while num > 1:
@@ -9,5 +9,5 @@ def problem_5(num):
 
     return f
 
-print problem_5(600851475143)
+print problem_3(600851475143)
 
