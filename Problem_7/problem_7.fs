@@ -7,10 +7,6 @@ let list_of_dividers num =
 let is_prime num =
     (Seq.length (list_of_dividers num)) = 0
 
-let print_seq num =
-    for x in (list_of_dividers num) do
-        printfn "%d" x
-
 let rec problem_7 current primes counter =
     match primes, counter with
         | x, y when x >= 10002 -> current
