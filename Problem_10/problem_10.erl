@@ -10,14 +10,13 @@ problem_10(Max) ->
     Sum = sum(Max, 2, 0),
     Sum.
 
-
 is_prime(N, PFactor)->
     MaxFactor = math:sqrt(N),
     if PFactor =< MaxFactor ->
 	    if  N rem PFactor == 0 ->
 		    false;
 		true ->
-		    isprime(N, PFactor + 1)
+		    is_prime(N, PFactor + 1)
 	    end;
        true ->
 	    true
