@@ -6,13 +6,13 @@ expression.split.each { |element|
   if ["+", "-", "*", "/"].include? element
     a, b = stack.pop(2)
     case element
-      when "+"
+    when "+"
       stack.push (a + b)
     when "-"
       stack.push (a - b)
-      when "*"
+    when "*"
       stack.push (a * b)
-      when "/"
+    when "/"
       stack.push (a / b).to_f
     end
   elsif
