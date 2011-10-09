@@ -15,7 +15,9 @@ make_step lst i n
           | i < n = make_step (sieve lst i) (i + 1) n
           | otherwise = lst
 
-solution n = make_step lst 3 n
+solution n = [2] ++ [index i | i <- filtered]
          where lst = [SieveElement i True | i <- [3, 5 .. n]]
+               processed = make_step lst 3 n
+               filtered = filter (\x -> flag x == True) processed
 
 
