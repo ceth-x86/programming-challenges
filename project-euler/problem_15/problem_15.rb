@@ -1,4 +1,4 @@
-class Problem_15 < Hash
+class DynamicProgrammingSolution < Hash
 	class ElementOfSolution
 		attr_reader :key, :area
 
@@ -57,5 +57,23 @@ class Problem_15 < Hash
 end
 
 
-solution = Problem_15.new(20)
-puts solution.calculate
+class MathSolution 
+	def initialize(size)
+		@size = size
+	end	
+
+	def factorial(n)
+		n <= 1 ? 1 : n * factorial(n - 1)	
+	end
+
+	def calculate
+		factorial(@size + @size) / (factorial(@size) * (factorial(@size)))
+	end
+end
+
+dynamic_solution = DynamicProgrammingSolution.new(20)
+puts dynamic_solution.calculate
+
+math_solution = MathSolution.new(20)
+puts math_solution.calculate
+
