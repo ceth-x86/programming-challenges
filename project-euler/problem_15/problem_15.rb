@@ -1,4 +1,30 @@
 class Problem_15 < Hash
+	class ElementOfSolution
+		attr_reader :key, :area
+
+		def initialize(x, y, size)
+			@x, @y, @size = x, y, size
+			@key = (@size - @x).to_s + "x" + (@size - @y).to_s
+			@area = (@size - @x) * (@size - @y)
+		end
+
+		def can_move_right
+			@x < @size
+		end
+
+		def can_move_down
+			@y < @size
+		end
+
+		def move_right
+			ElementOfSolution.new(@x + 1, @y, @size)
+		end
+
+		def move_down
+			ElementOfSolution.new(@x, @y + 1, @size)
+		end
+	end
+
 	def initialize(size)
 		@grid_size = size		
 	end
@@ -30,31 +56,6 @@ class Problem_15 < Hash
 	end
 end
 
-class ElementOfSolution
-	attr_reader :key, :area
-
-	def initialize(x, y, size)
-		@x, @y, @size = x, y, size
-		@key = (@size - @x).to_s + "x" + (@size - @y).to_s
-		@area = (@size - @x) * (@size - @y)
-	end
-
-	def can_move_right
-		@x < @size
-	end
-
-	def can_move_down
-		@y < @size
-	end
-
-	def move_right
-		ElementOfSolution.new(@x + 1, @y, @size)
-	end
-
-	def move_down
-		ElementOfSolution.new(@x, @y + 1, @size)
-	end
-end
 
 solution = Problem_15.new(20)
 puts solution.calculate
